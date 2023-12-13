@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="mt-5 bor">
+    <h1 class="ps-3">GST Calculator</h1>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-5 mt-4 cal text-center p-3">
+      <div><h3 class="text-center text1">Calculations</h3></div>
+      <div class="text-center">
+        <div class="radio-inputs">
+          
+          <label class="radio">
+            <input type="radio" name="radio" [checked]="true" (change)="option1()" #radio11 />
+            <span >GST Exclusive</span>
+          </label>
+          <label class="radio m-4">
+            <input type="radio" name="radio"  (change)="option2()" #radio12 />
+            <span >GST Inclusive</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <label for="amount">Enter Amount:-</label>
+      </div>
+
+      <div>
+        <input
+          type="number"
+          class="custom-input py-2 text-center"
+          id="amount"
+          placeholder="Enter amount"
+          [(ngModel)]="inputprice"
+        />
+      </div>
+      <div>
+        <div class="mt-3">
+          <label for="per">Enter GST%</label>
+        </div>
+         
+          <select id="per"  [(ngModel)]="gst" #gst18>
+          <option value="5" class="text-center">5 %</option>
+          <option value="12" class="text-center">12 %</option>
+          <option value="18" class="text-center">18 %</option>
+          <option value="28" class="text-center">28 %</option>
+        </select>
+      </div>
+      <div class="mt-3">
+        <button type="button" *ngIf="selectedOption1" class="btn btn-primary m-2" (click)="calculategst1()" >Calculate</button>
+        <button type="button" *ngIf="selectedOption2" class="btn btn-primary m-2" (click)="calculategst2()">Calculate</button>
+        <button type="reset" (click)="resetForm()" class="btn btn-primary m-2 px-4">Reset</button>
+      </div>
+    </div>
+    <div class="col-12 col-md-5 mt-4 res ms-2 p-3 text-center">
+      <div><h3 class="text-center text1">Results</h3></div>
+      <div class="mt-4"><p>Original price :</p></div>
+      <div *ngIf="selectedOption1==true"  class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{ognprice1 | number:'1.2-2'}}₹</div>
+      <div *ngIf="selectedOption2==true"  class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{ ognprice2 | number:'1.2-2'}}₹</div>  
+          <div class="mt-2"><p>GST amount :</p></div>
+      <div *ngIf="selectedOption1==true" class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{gstamount1| number:'1.2-2'}}₹</div>
+      <div *ngIf="selectedOption2==true" class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{gstamount2| number:'1.2-2'}}₹</div>
+
+      <div class="mt-2"><p>Final price :</p></div>
+      <div *ngIf="selectedOption1==true" class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{ finalamount1 | number:'1.2-2'}}₹</div>
+      <div *ngIf="selectedOption2==true" class="d-flex justify-content-center align-items-center mx-5 custom-input p-1">{{ finalamount2 | number:'1.2-2'}}₹</div>
+  
+    </div>
+  </div>
+</div>

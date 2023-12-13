@@ -1,0 +1,42 @@
+h1{
+    color:#0d2366;
+    font-weight: bolder;
+}
+.bor{
+    border-left: 5px solid #0b70e7;
+
+}
+.cal{
+    border: 1px solid #c7c7c7;
+    border-radius: 15px;
+
+}
+.res{
+    border: 1px solid #c7c7c7;
+    border-radius: 15px;
+
+}
+.custom-input {
+    border: 1px solid #5d9fd1;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  #per{
+    width: 50%;
+    border: 1px solid #5d9fd1;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .custom-input2 {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #5d9fd1;
+    border-radius: 5px;
+
+  }
+  .text1{
+    color:#0d2366 ;
+
+  }
